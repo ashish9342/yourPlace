@@ -1,0 +1,22 @@
+<h1>Employee List</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>E Code</th>
+      <th>Department</th>
+      <th>Designation</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="employee in employees">
+      <td>{{employee.first_name + employee.last_name}}</td>
+      <td>{{employee.emp_id}}</td>
+      <td>{{employee.department}}</td>
+      <td>{{employee.designation}}</td>
+      <td>{{employee.email}}</td>
+    </tr>
+  </tbody>
+</table>

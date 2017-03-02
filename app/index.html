@@ -7,12 +7,16 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
+    <!-- <link rel="stylesheet" src="bootstrap-sass-official/assets/stylesheets/_bootstrap.scss"/> -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <!-- bower:css -->
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+    <script src="config.js"></script>
+
   </head>
   <body ng-app="yourSpaceApp">
     <!--[if lte IE 8]>
@@ -38,36 +42,33 @@
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
 
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#/about">About</a></li>
-              <li><a ng-href="#/">Contact</a></li>
+              <li class="active" ><a ui-sref="#/home">Home</a></li>
+              <li><a ui-sref="#/selfService">Self Service</a></li>
+              <li><a ui-sref="#/edirectory">e Directory</a></li>
+              <li><a ui-sref="#/myLeave">My Leave</a></li>
+              <li><a ui-sref="#/attendence">Attendence &amp; Temp Card</a></li>
+              <li><a ui-sref="#/compOffRequest">Comp Off Request</a></li>
+              <li><a ui-sref="#/raiseQuery">Raise Query</a></li>
+              <li><a ui-sref="#/eacademy">eAcademy</a></li>
+              <li><a ui-sref="#/downloads">Downloads</a></li>
             </ul>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="container">
-    <div ng-view=""></div>
+    <div class="container-fluid">
+        <h2>Your Space</h2>
+        <p>Welcome to Your Space Portal</p>
+        <div ui-view ></div>
+
     </div>
 
     <div class="footer">
       <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+        <p></span> from the Yeoman team</p>
       </div>
     </div>
-
-
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
-    </script>
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -80,12 +81,22 @@
     <script src="bower_components/angular-messages/angular-messages.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
+        <!-- All controllers go here -->
         <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/HomePageCtrl.js"></script>
+        <script src="scripts/controllers/edirectoryCtrl.js"></script>
+        <script src="scripts/controllers/MainController.js"></script>
+        <!-- End of controllers -->
+        <!-- All services go here -->
+        <script src="scripts/services/edirectory.service.js"></script>
+
+        <!-- End of services -->
         <!-- endbuild -->
 </body>
 </html>
