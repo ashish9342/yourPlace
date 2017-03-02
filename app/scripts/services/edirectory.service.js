@@ -1,10 +1,21 @@
-app.factory('edirectory', function($http) {
-        const success = response => response.data;
-        const error = response => console.dir(response);
+'use strict';
 
-        const getEmployee = () => $http.get('js/data/employee.json').then(success, error);
+angular
+    .module('App.services')
+    .factory('edirectoryService', function($http) {
+        var fullData = false;
+        var success = function(response) {
+            return fullData ? response.data : response.data[0];
+        };
+        var error = function(response) {
+            console.dir(response);
+        };
+        var getAllEmployees = function() {
+            fullData = true;
+            return $http.get('scripts/data/employee.json').then(success, error);
+        };
 
         return {
-            getEmployee: getEmployee
+            getAllEmployees: getAllEmployees
         };
     });

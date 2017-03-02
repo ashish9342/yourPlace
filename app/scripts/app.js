@@ -9,10 +9,24 @@
    * Main module of the application.
    */
   var app = angular.module('yourSpaceApp', ['ngAnimate', 'ngAria', 'ngCookies', 'ngMessages', 'ngResource', 'ngRoute', 'ui.router']);
+            angular.module('App.services', []);
+
   app
     .config(function($urlRouterProvider, $stateProvider) {
       $urlRouterProvider.otherwise('/home');
       $stateProvider
+        // .state("header", {
+        //   views:{
+        //     "header":{
+        //       templateUrl: "views/header.html"
+        //     }
+        // })
+        // .state("footer", {
+        //   views:{
+        //     "footer":{
+        //       templateUrl: "views/footer.html"
+        //     }
+        // })
         .state("home", {
           url:"/home",
           views:{
@@ -39,8 +53,7 @@
             },
             "queryStatus@home":{
               templateUrl: "views/home/query-status.html"
-            }
-            ,
+            },
             "payrolQueryStatus@home":{
               templateUrl: "views/home/payrol-query-status.html"
             }
@@ -59,7 +72,14 @@
         })
         .state("edirectory", {
           url: "/edirectory",
-          templateUrl: "views/edirectory.html"
+          templateUrl: "views/edirectory.html",
+          controller: 'edirectoryCtrl',
+          controllerAs: 'edirectory',
+          resolve: {
+            employeeList: function (edirectoryService) {
+              return edirectoryService.getAllEmployees();
+            }
+          }
         })
         .state("myLeave", {
           url: "/my-leave",
