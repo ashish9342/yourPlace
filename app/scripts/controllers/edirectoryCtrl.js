@@ -15,8 +15,7 @@ angular.module('yourSpaceApp')
     $scope.faClass ="fa fa-sort-desc";
     $scope.page = 1;
     $scope.contactToShow = 10;
-    console.log(employeeList);
-
+    $scope.contactCounter = $scope.contactToShow;
 
     $scope.pages = Math.ceil($scope.employeeList.length/ $scope.contactToShow);
     $scope.myQuery = 0;
@@ -34,10 +33,20 @@ angular.module('yourSpaceApp')
         $scope.query= {};
         $scope.myQuery = 0;
       }
-    }
-
+    };
+// next Button
     $scope.nextPage = function(){
-      $scope.page++;
-      console.log("Page -> " + $scope.page);
-    }
+
+      if($scope.employeeList !== undefined){
+        $scope.page++;
+        for(let i = $scope.contactCounter ; i < $scope.contactCounter + 10 ; i++){
+          console.log($scope.employeeList[i]);
+        }
+      }else {
+        //disable the next button
+        console.log("disable");
+      }
+      $scope.contactCounter = $scope.contactCounter + 10;
+    };
+
   }]);
