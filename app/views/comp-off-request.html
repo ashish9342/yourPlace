@@ -1,21 +1,45 @@
 
 <div class="content">
-  hello
-  <!-- tab home -->
-    <div id="home" class="">
+  <h2>Compensatory off Dashboard</h2>
+
+
       <div class="row flex">
-        <div ui-view="profile"></div>
-        <div ui-view="companyAnnouncement"></div>
-        <div ui-view="leaveBalance"></div>
-        <div ui-view="leaveDetails"></div>
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-header">Status</div>
+            <div class="card-block">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Date <i class="{{faClass}}" aria-hidden="true"></i></th>
+                    <th>From <i class="{{faClass}}" aria-hidden="true"></i></th>
+                    <th>to</th>
+                    <th>Hours worked</th>
+                    <th>Availed Compensatory Off</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{{date}}</td>
+                    <td>{{from}}</td>
+                    <td>{{to}}</td>
+                    <td>{{hoursWorked}}</td>
+                    <td>{{AvailedcompOff}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-header text-center">Comp off history</div>
+            <div class="card-block">
+              <div class="card-title"></div>
+              <div class="card-text"></div>
+            </div>
+          </div>
+        </div>
       </div>
-      <hr>
-      <div class="row">
-        <div ui-view="attendenceDetails"></div>
-        <div ui-view="holidayList"></div>
-        <div ui-view="queryStatus"></div>
-        <div ui-view="payrolQueryStatus"></div>
-      </div>
-    </div>
-    <!-- tab home ends -->
+
 </div>

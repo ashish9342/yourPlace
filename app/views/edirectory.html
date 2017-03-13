@@ -24,12 +24,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="employee in employeeList | orderBy:myOrderBy | filter : search | limitTo:contactToShow ">
-          <td>{{employee.first_name + " " +employee.last_name}}</td>
-          <td>{{employee.emp_id}}</td>
-          <td>{{employee.department}}</td>
-          <td>{{employee.designation}}</td>
-          <td>{{employee.email}}</td>
+        <tr ng-repeat="employee in employee10 | orderBy:myOrderBy | filter : search">
+          <td width="20%">{{employee.first_name + " " +employee.last_name}}</td>
+          <td width="20%">{{employee.emp_id}}</td>
+          <td width="20%">{{employee.department}}</td>
+          <td width="20%">{{employee.designation}}</td>
+          <td width="20%">{{employee.email}}</td>
         </tr>
       </tbody>
     </table>
@@ -38,11 +38,24 @@
 
 <div class="row">
   <div class="col-sm-6">{{employeeList.length}} contacts found</div>
-  <div class="col-sm-6 ">
+
+  <div class="col-sm-2 ">
 
     <div class="btn-group btn-group-sm pull-right" role="group">
-      <button type="button" class="btn btn-secondary btn-sm" ng-click="nextPage()">></button>
-      <button type="button" class="btn btn-secondary btn-sm">>></button>
+      <button type="button" class="btn btn-secondary btn-sm" title="First" ng-click="firstPage()"><<</button>
+      <button type="button" class="btn btn-secondary btn-sm" title="Previous" ng-click="previousPage()"><</button>
+    </div>
+
+  </div>
+
+  <div class="col-sm-2">
+    <div class="pages pull-right">{{page}} of {{pages}}</div>
+  </div>
+  <div class="col-sm-2">
+
+    <div class="btn-group btn-group-sm pull-right" role="group">
+      <button type="button" class="btn btn-secondary btn-sm" title="Next" ng-click="nextPage()">></button>
+      <button type="button" class="btn btn-secondary btn-sm" title="Last" ng-click="lastPage()">>></button>
     </div>
 
   </div>
