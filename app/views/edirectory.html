@@ -24,7 +24,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="employee in employee10 | orderBy:myOrderBy | filter : search">
+        <tr dir-paginate="employee in employeeList | orderBy:myOrderBy | filter : search | itemsPerPage: 10">
           <td width="20%">{{employee.first_name + " " +employee.last_name}}</td>
           <td width="20%">{{employee.emp_id}}</td>
           <td width="20%">{{employee.department}}</td>
@@ -37,26 +37,17 @@
 </div>
 
 <div class="row">
-  <div class="col-sm-6">{{employeeList.length}} contacts found</div>
+  <div class="col-sm-6">{{(employeeList|filter:search).length}} contacts found</div>
 
-  <div class="col-sm-2 ">
-
-    <div class="btn-group btn-group-sm pull-right" role="group">
-      <button type="button" class="btn btn-secondary btn-sm" title="First" ng-click="firstPage()"><<</button>
-      <button type="button" class="btn btn-secondary btn-sm" title="Previous" ng-click="previousPage()"><</button>
-    </div>
-
-  </div>
-
-  <div class="col-sm-2">
-    <div class="pages pull-right">{{page}} of {{pages}}</div>
-  </div>
-  <div class="col-sm-2">
-
-    <div class="btn-group btn-group-sm pull-right" role="group">
-      <button type="button" class="btn btn-secondary btn-sm" title="Next" ng-click="nextPage()">></button>
-      <button type="button" class="btn btn-secondary btn-sm" title="Last" ng-click="lastPage()">>></button>
-    </div>
-
+  <div class="col-sm-6 ">
+    <dir-pagination-controls class="pull-right"
+    max-size="10"
+    direction-links="true"
+    boundary-links="true"
+    on-page-change=""
+    pagination-id=""
+    template-url=""
+    auto-hide="false">
+    </dir-pagination-controls>
   </div>
 </div>

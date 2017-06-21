@@ -1,76 +1,80 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- <link rel="stylesheet" src="bootstrap-sass-official/assets/stylesheets/_bootstrap.scss"/> -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-    <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
-    <script src="config.js"></script>
 
-  </head>
-  <body ng-app="yourSpaceApp" ng-controller="MainController">
-    <!--[if lte IE 8]>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- <link rel="stylesheet" src="bootstrap-sass-official/assets/stylesheets/_bootstrap.scss"/> -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+  <script src="config.js"></script>
+
+</head>
+
+<body ng-app="yourSpaceApp" ng-controller="MainController">
+  <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <!-- Add your site or application content here -->
-    <header class="header">
-        <div ui-view ="header"></div>
-    </header>
+  <!-- Add your site or application content here -->
+  <header class="header">
+    <div ui-view="header"></div>
+  </header>
 
-    <main class="container-fluid">
-        <div ui-view ></div>
-    </main>
+  <main class="container-fluid">
+    <div ui-view></div>
+  </main>
 
-    <footer class="footer">
-      <div ui-view ="footer"></div>
-    </footer>
+  <footer class="footer">
+    <div ui-view="footer"></div>
+  </footer>
 
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angular-aria/angular-aria.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="bower_components/angular-messages/angular-messages.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="bower_components/tether/dist/js/tether.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="bower_components/d3/d3.js"></script>
-    <script src="bower_components/angular-charts/dist/angular-charts.js"></script>
-    <script src="bower_components/chart.js/dist/Chart.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
+  <!-- build:js(.) scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-aria/angular-aria.js"></script>
+  <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+  <script src="bower_components/angular-messages/angular-messages.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="bower_components/tether/dist/js/tether.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="bower_components/d3/d3.js"></script>
+  <script src="bower_components/angular-charts/dist/angular-charts.js"></script>
+  <script src="bower_components/chart.js/dist/Chart.js"></script>
+  <script src="bower_components/angularUtils-pagination/dirPagination.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/route.js"></script>
+  <!-- build:js({.tmp,app}) scripts/scripts.js -->
+  <script src="scripts/app.js"></script>
+  <script src="scripts/route.js"></script>
 
-        <!-- All controllers go here -->
-        <script src="scripts/controllers/MainController.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/HomePageCtrl.js"></script>
-        <script src="scripts/controllers/edirectoryCtrl.js"></script>
-        <!-- End of controllers -->
-        <!-- All services go here -->
-        <script src="scripts/services/edirectory.service.js"></script>
+  <!-- All controllers go here -->
+  <script src="scripts/controllers/MainController.js"></script>
+  <script src="scripts/controllers/main.js"></script>
+  <script src="scripts/controllers/HomePageCtrl.js"></script>
+  <script src="scripts/controllers/edirectoryCtrl.js"></script>
+  <!-- End of controllers -->
+  <!-- All services go here -->
+  <script src="scripts/services/edirectory.service.js"></script>
 
-        <!-- End of services -->
-        <!-- endbuild -->
+  <!-- End of services -->
+  <!-- endbuild -->
 </body>
+
 </html>
